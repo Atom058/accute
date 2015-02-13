@@ -1,3 +1,11 @@
+# Defaults
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+
 # Created by https://www.gitignore.io
 
 ### Android ###
