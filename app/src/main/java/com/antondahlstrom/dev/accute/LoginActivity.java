@@ -1,14 +1,17 @@
 package com.antondahlstrom.dev.accute;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.parse.Parse;
 
 
-public class MainActivity extends ActionBarActivity {
+public class LoginActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,4 +47,12 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    /* Called when the user clicks the login button */
+    public void login(View view){
+        Log.v("0","button pressed");
+        startActivity(new Intent(this, AddReceipt.class));
+        finish();
+    }
+
 }
