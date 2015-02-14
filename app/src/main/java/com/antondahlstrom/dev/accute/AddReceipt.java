@@ -7,7 +7,9 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SurfaceView;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 
 /**
@@ -15,11 +17,21 @@ import android.widget.TextView;
  */
 public class AddReceipt extends ActionBarActivity{
 
+    Camera camera;
+    CameraPreview preview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_receipt);
 
+        //Camera
+        Camera camera1 = getCameraInstance();
+        //Preview class
+        CameraPreview preview = new CameraPreview(this, camera);
+        //Find layout
+        FrameLayout surfaceView = (FrameLayout) findViewById(R.id.frameView);
+        surfaceView.addView(preview);
     }
 
     @Override
@@ -46,10 +58,11 @@ public class AddReceipt extends ActionBarActivity{
 
     public void checkCamera(View view){
         TextView textBox = (TextView) findViewById(R.id.textView2);
-        if(getCameraInstance() != null){
-            textBox.setText("It might actually have worked!");
+
+        if(false){
+            textBox.setText("We have a problem, to be mild");
         } else{
-            textBox.setText("It didn't work...");
+            textBox.setVisibility(View.INVISIBLE);
         }
     }
 
