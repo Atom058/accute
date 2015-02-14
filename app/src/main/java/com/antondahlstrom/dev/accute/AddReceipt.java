@@ -17,8 +17,8 @@ import android.widget.TextView;
  */
 public class AddReceipt extends ActionBarActivity{
 
-    Camera camera;
-    CameraPreview preview;
+    private Camera camera;
+    private CameraPreview preview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class AddReceipt extends ActionBarActivity{
         setContentView(R.layout.activity_add_receipt);
 
         //Camera
-        Camera camera1 = getCameraInstance();
+        camera = getCameraInstance();
         //Preview class
         CameraPreview preview = new CameraPreview(this, camera);
         //Find layout
